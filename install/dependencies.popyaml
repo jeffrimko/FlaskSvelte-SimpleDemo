@@ -1,0 +1,60 @@
+# This is a PopPage YAML file used to generate dependency/requirement files.
+
+__opt__:
+    command: make
+    inpath:
+      - https://github.com/jeffrimko/PopPageTemplates/blob/master/check_deps_batch/template.jinja2
+      - https://github.com/jeffrimko/PopPageTemplates/blob/master/python_req/template.jinja2
+    outpath:
+      - ..\_Check_Dependencies.bat
+      - requirements.txt
+
+deps:
+
+  - name: 'Python'
+    desc: 'Python language interpreter.'
+    ref: 'www.python.org'
+    ver: '3.x'
+    cmd: python -V
+
+  - name: 'Pip'
+    desc: 'Python package manager.'
+    ref: 'www.python.org'
+    ver: 'latest'
+    cmd: python -V
+
+  - name: 'Ubuild'
+    desc: 'Lightweight task runner.'
+    ref: 'https://pypi.org/project/ubuild/'
+    ver: 'latest'
+    cmd: ubuild --help
+
+  - name: 'Qprompt'
+    desc: 'Python CLI prompt library.'
+    ref: 'https://pypi.org/project/qprompt/'
+    ver: 'latest'
+    cmd: python -c "import qprompt"
+
+  - name: 'Auxly'
+    desc: 'Python script helper library.'
+    ref: 'https://pypi.org/project/auxly/'
+    ver: 'latest'
+    cmd: python -c "import auxly"
+
+  - name: 'Flask'
+    desc: 'Python web app library.'
+    ref: 'https://pypi.org/project/flask/'
+    ver: 'latest'
+    cmd: python -c "import flask"
+
+  - name: 'Npm'
+    desc: 'Node package manager.'
+    ref: 'https://www.npmjs.com/'
+    ver: 'latest'
+    cmd: npm -v
+
+  - name: 'Rollup'
+    desc: 'JavaScript module bundler.'
+    ref: 'http://rollupjs.org/guide/en/'
+    ver: 'latest'
+    cmd: rollup -v
