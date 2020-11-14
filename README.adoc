@@ -5,7 +5,7 @@
 This is a simple demo of using http://flask.pocoo.org/[Flask] with https://svelte.dev/[Svelte]. This demo provides a page with a button that will call to an endpoint for a random number.
 
 == Requirements
-This demo was written with the Windows OS in mind although it should be easy enough to run on other operating systems. All dependencies should be listed in the main `_Check_Dependencies.bat` which is generated from `install\dependencies.popyaml`. Additionally, a Python requirements file is available at `install\requirements.txt`. Local Node modules will be installed when the app is started the first time.
+This demo was written with the Windows OS in mind although it should be easy enough to run on other operating systems. All dependencies should be listed in the main `_Check_Dependencies.bat` which is generated from `install\dependencies.popyaml` using https://github.com/jeffrimko/PopPage[PopPage]. Additionally, a Python requirements file is available at `install\requirements.txt`. Local Node modules will be installed when the app is started the first time.
 
 == Usage
 A https://pypi.org/project/ubuild/[Ubuild] script is provided at `_Run.py` which should handle the basics like starting/stopping the server and viewing the app.

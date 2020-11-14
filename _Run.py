@@ -36,7 +36,7 @@ def run():
     with Cwd("app"):
         if not op.isdir("node_modules"):
             status("Running NPM install...", silent, ["npm install"])
-        PROCS.append(start("node node_modules/rollup/bin/rollup -w -c rollup.config.js"))
+        PROCS.append(start("node node_modules/rollup/dist/bin/rollup -w -c rollup.config.js"))
         PROCS.append(start("python app.py"))
         alert("Application starting...")
         time.sleep(3)
@@ -45,6 +45,7 @@ def run():
             browse()
         else:
             warn("Issue starting application!")
+            stop()
 
 @menu
 def browse():
