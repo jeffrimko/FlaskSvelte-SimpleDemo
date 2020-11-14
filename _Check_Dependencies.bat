@@ -27,18 +27,7 @@ call:ChkDep^
     "Python package manager."^
     "www.python.org"^
     "latest"^
-    python -V
-if %DEP_OK% equ 0 (
-    set ALL_OK=0
-    pause
-)
-set DEP_OK=1
-call:ChkDep^
-    "Npm"^
-    "Node package manager."^
-    "https://www.npmjs.com/"^
-    "latest"^
-    npm -v
+    pip -V
 if %DEP_OK% equ 0 (
     set ALL_OK=0
     pause
@@ -83,6 +72,17 @@ call:ChkDep^
     "https://pypi.org/project/flask/"^
     "latest"^
     python -c "import flask"
+if %DEP_OK% equ 0 (
+    set ALL_OK=0
+    pause
+)
+set DEP_OK=1
+call:ChkDep^
+    "Npm"^
+    "Node package manager."^
+    "https://www.npmjs.com/"^
+    "latest"^
+    npm -v
 if %DEP_OK% equ 0 (
     set ALL_OK=0
     pause
