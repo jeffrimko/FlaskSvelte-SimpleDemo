@@ -34,13 +34,17 @@ def run():
         warn("App server already running!")
         return
     with Cwd("app"):
-        if op.isdir("node_modules"):
+        if not op.isdir("node_modules"):
             status("Running NPM install...", silent, ["npm install"])
-        PROCS.append(start("rollup -w -c rollup.config.js"))
+        PROCS.append(start("node node_modules/rollup/bin/rollup -w -c rollup.config.js"))
         PROCS.append(start("python app.py"))
-        alert("Application running.")
+        alert("Application starting...")
         time.sleep(3)
-        browse()
+        if all(map(lambda p: p.isrunning(), PROCS)):
+            alert("Application started.")
+            browse()
+        else:
+            warn("Issue starting application!")
 
 @menu
 def browse():
