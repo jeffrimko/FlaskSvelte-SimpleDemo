@@ -22,7 +22,7 @@ def hello():
 
 @app.route('/random')
 def random():
-    return f"{randint(1,10)}"
+    return f"{randint(1,100)}"
 
 ##==============================================================#
 ## SECTION: Main Body                                           #
